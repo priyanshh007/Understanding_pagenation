@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState} from 'react'
 
-function stories() {
-    let [isLoading,setIsLoading]=useState(1)
+
+function Stories() {
+     let [isLoading,setIsLoading]=useState(1)
     let API="https://hn.algolia.com/api/v1/search?HTML";
-  
     const fetchApiData=async(url)=>{
       try{
          const res=await fetch(url);
@@ -14,8 +14,6 @@ function stories() {
       catch(error){
         console.log(error);
       }
-
-
     }
     useEffect(()=>{
       fetchApiData(API);
@@ -27,15 +25,14 @@ function stories() {
         <h2>  Loading.....</h2>
         </>
     }
-
     console.log(isLoading);
     return (
     <div>
         <h2>
-            Mt Tech News Post
+            My Tech News Post
         </h2>
     </div>
   )
-}
+};
 
-export default stories;
+export default Stories;
